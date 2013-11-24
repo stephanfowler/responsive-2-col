@@ -1,68 +1,56 @@
 <html>
     <head>
         <style>
+            body {
+                margin-top: 0;
+            }
+            
             a {
                 text-decoration: none;
             }
-            .container {
-                position: relative;
+
+            .header {
                 max-width: 970px;
-                margin: 0 auto 50px auto;
-                border-bottom: 1px solid #CCCCCC;
+                height: 58px;
+                background: url(images/logo.jpg) no-repeat;
+                margin: 0 auto 15px auto;
+                background-color: rgb(33, 69, 131);
+            }
+            .container {
+                box-sizing: border-box;
+                position: relative;
+                max-width: 1000px;
+                margin: 0 auto 30px auto;
             }
             
             .lead {
                 width: 100%;
-                margin: 15px 0;
-            }
-            .columizer {
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .main {
-                margin: 0 330px 0 0;
-            }
-
-            .other {
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 300px;
-                border-left: 1px solid #CCCCCC;
-                padding-left: 15px;
-            } 
-            .other-header {
-                font-weight: bold;
-                color: #999999;
             }
 
             .article {
-                padding: 0 0 5px 0;
                 clear: both;
                 margin: 0 0 10px 0;
                 overflow: auto;
                 width: 100%;
             }
-            .lead .article {
-                width: 100%;
-                margin: 15px 0;
+            .article:last-child  {
+                border-bottom: 1px solid #CCCCCC;
+                margin: 0;
             }
             
             .image {
-                width: 35%;
+                width: 30%;
                 float: right;
-                margin: 0 0 0 10px;
+                margin: 0 0 10px 10px;
             }
             .lead .image {
-                width: 300px;
+                width: 100%
             }
 
-            .lead .article:first-child .image {
-                width: 57%;
+            .image-boost {
             }
             .image-boost .image {
-                width: 65%;
+                width: 70%;
                 float: left;
                 margin: 0 10px 0 0;
             }
@@ -75,9 +63,7 @@
                 float: none;
             }
             .sublink-image {
-                width: 75px;
-                margin: 2px 5px 5px 0;
-                float: left;
+                display: none;
             }
 
             .headline {
@@ -88,13 +74,12 @@
                 padding: 8px 0 5px 0;
                 border-top: 1px solid #CCCCCC;
             }
-            .lead .headline,
-            .main .article:first-child .headline {
+            .lead .headline {
                 font-size: 32;
                 line-height: 30px;
             }
             .other .headline {
-                font-size: 20px;
+                font-size: 18px;
                 line-height: 18px;
             }
             .image-boost .headline {
@@ -110,6 +95,7 @@
             .trailtext {
                 display: block;
                 font-size: 15px;
+                color: #666666;
                 padding: 0 0 5px 0;
             }
             .lead .trailtext {
@@ -126,35 +112,96 @@
                 font-size: 14px;
                 overflow: auto;
             }
-            .lead .article:first-child .sublink {
-                width: 40%;
-                float: inherit;
-            }
             .other .sublink {
                 display: inline-block;
                 margin: 0 10px 0 0;
             }
 
+            .other-header,
             .show-more {
                 background: #CCCCCC;
-                padding: 5px 15px;
-                width: 316px;
-                height: 30px;
-                position: absolute;
-                right: 0px;
-                bottom: -1px;
-                box-sizing: border-box;
+                padding: 7px 0 5px 0;
+                text-align: center;
                 text-transform: uppercase;
-                -webkit-box-shadow: 0px -10px 10px -2px #FFFFFF;
             }
 
+            .banner,
             .mpu {
                 margin: 0 0 15px 0;
+                display: none;
             }
+
+            @media (min-width: 620px) {
+                .container {
+                    padding: 0 15px;
+                }
+                
+                .lead .image {
+                    width: 300px;
+                }
+            }
+            
+            @media (min-width: 768px) {
+                
+                .columizer {
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .main {
+                    margin: 0 330px 0 0;
+                }
+
+                .other {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 300px;
+                    border-left: 1px solid #CCCCCC;
+                    padding-left: 15px;
+                }
+
+                .lead .article {
+                    margin: 0 0 20px 0;
+                }
+
+                .show-more {
+                    width: 300px;
+                    position: absolute;
+                    right: 15px;
+                    bottom: -1px;
+                    -webkit-box-shadow: 0px -10px 10px -2px #FFFFFF;
+                }
+
+                .mpu {
+                    display: block;
+                }
+                    
+            }
+            
+            @media (min-width: 970px) {
+                .banner {
+                    display: block;
+                }
+                    
+                .lead .article:first-child .image {
+                    width: 522px;
+                }
+
+                .sublink-image {
+                    display: block;
+                    width: 75px;
+                    margin: 2px 5px 5px 0;
+                    float: left;
+                }
+            }    
         </style>
     </head>
     <body>
+        <div class="header"></div>
+
         <div class="container">
+            <img class="banner" src="images/banner-970-90.jpg" />
             <div class="lead">
                 <div class="article">
                     <img class="image" src="images/image.jpg" />
@@ -163,22 +210,20 @@
                     
                     <div class="sublink">
                         <img class="sublink-image" src="images/image.jpg" />
-                        <a href="#">Sublink headline number one which happens to be quite long so wraps</a>
+                        <a href="#">Sublink headline number one which happens to be quite long so wraps which happens to be quite long</a>
                     </div>
                     <div class="sublink">
                         <img class="sublink-image" src="images/image.jpg" />
-                        <a href="#">Sublink headline number one</a>
+                        <a href="#">Sublink headline number two</a>
                     </div>
-                    <div class="sublink">
-                        <img class="sublink-image" src="images/image.jpg" />
-                        <a href="#">Sublink headline number one</a>
-                    </div>
+                    <a class="sublink" href="#">Sublink headline number three</a>
+                    <a class="sublink" href="#">Sublink headline number four</a>
                 </div>
                 <!-- lead 1 
                 -->
                 <div class="article">
                     <img class="image" src="images/image.jpg" />
-                    <a class="headline" href="#">This is an optional lead story, or second lead story</a>
+                    <a class="headline" href="#">An optional lead story, or second lead story, i.e. big but not full improtance one</a>
                     <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
                     <a class="sublink" href="#">Sublink headline number one</a>
                     <a class="sublink" href="#">Sublink headline number two</a>
@@ -198,9 +243,137 @@
                         <a class="sublink" href="#">Sublink headline number three</a>
                     </div>
                     <div class="article">
+                        <img class="image" src="images/non-standard.jpg" />
+                        <a class="headline" href="#">This has a non standard image size, which just makes the whole item taller </a>
+                        <span class="trailtext">This trail text is longer than average this trail text is longer than average this trail text is longer than average this trail text is longer than average this trail text is longer than average this trailtext the trailtext the trailtext</span>
+                        <a class="sublink" href="#">Sublink headline number one</a>
+                        <a class="sublink" href="#">Sublink headline number two</a>
+                        <a class="sublink" href="#">Sublink headline number three</a>
+                    </div>
+                    <div class="article">
+                        <img class="image" src="images/image.jpg" />
+                        <a class="headline" href="#">This has no sublinks</a>
+                        <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                    </div>
+                    <div class="article image-boost">
+                        <img class="image" src="images/image.jpg" />
+                        <a class="headline" href="#">This article has a great image, which has had it's volume increased</a>
+                        <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                        <a class="sublink" href="#">Sublink headline number one</a>
+                        <a class="sublink" href="#">Sublink headline number two</a>
+                        <a class="sublink" href="#">Sublink headline number three</a>
+                    </div>
+                    <div class="article">
+                        <a class="headline" href="#">This story has a weak image, so it has been hidden by the editor</a>
+                        <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                        <a class="sublink" href="#">Sublink headline number one</a>
+                        <a class="sublink" href="#">Sublink headline number two</a>
+                        <a class="sublink" href="#">Sublink headline number three</a>
+                    </div>
+                    <div class="article">
+                        <img class="image" src="images/non-standard.jpg" />
+                        <a class="headline" href="#">This has a non standard image size, which just makes the whole item taller </a>
+                        <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                        <a class="sublink" href="#">Sublink headline number one</a>
+                        <a class="sublink" href="#">Sublink headline number two</a>
+                        <a class="sublink" href="#">Sublink headline number three</a>
+                    </div>
+                </div>
+                <div class="other">
+                    <img class="mpu" src="images/mpu.jpg" />
+                    <div class="other-header">Other News</div>
+                    <div class="article">
+                        <img class="image" src="images/image.jpg" />
+                        <a class="headline" href="#">This is an other story whose headline is seventy letters on average</a>
+                        <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                        <a class="sublink" href="#">Sublink headline number one</a>
+                        <a class="sublink" href="#">Sublink headline number two</a>
+                        <a class="sublink" href="#">Sublink headline number three</a>
+                    </div>
+                    <div class="article">
+                        <img class="image" src="images/image.jpg" />
+                        <a class="headline" href="#">BREAKING: here's a headline!</a>
+                        <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                    </div>
+                    <div class="article">
+                        <img class="image" src="images/image.jpg" />
+                        <a class="headline" href="#">This is an other story whose headline is seventy letters on average</a>
+                        <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                        <a class="sublink" href="#">Sublink headline number one</a>
+                        <a class="sublink" href="#">Sublink headline number two</a>
+                        <a class="sublink" href="#">Sublink headline number three</a>
+                    </div>
+                    <div class="article image-boost">
+                        <img class="image" src="images/image-tall.jpg" />
+                        <a class="headline" href="#">This article has an image, non standard, which has had it's volume increased</a>
+                        <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                    </div>
+                    <div class="article">
+                        <img class="image" src="images/image.jpg" />
+                        <a class="headline" href="#">This is an other story whose headline is seventy letters on average</a>
+                        <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                    </div>
+                    <div class="article">
+                        <img class="image" src="images/image.jpg" />
+                        <a class="headline" href="#">Something rather small happened</a>
+                        <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                    </div>
+                    <div class="article">
+                        <img class="image" src="images/image.jpg" />
+                        <a class="headline" href="#">This is an other story whose headline is seventy letters on average</a>
+                        <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                        <a class="sublink" href="#">Sublink headline number one</a>
+                        <a class="sublink" href="#">Sublink headline number two</a>
+                        <a class="sublink" href="#">Sublink headline number three</a>
+                    </div>
+                    <div class="article">
+                        <img class="image" src="images/image.jpg" />
+                        <a class="headline" href="#">This is an other story whose headline is seventy letters on average</a>
+                        <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                        <a class="sublink" href="#">Sublink headline number one</a>
+                        <a class="sublink" href="#">Sublink headline number two</a>
+                        <a class="sublink" href="#">Sublink headline number three</a>
+                    </div>
+                    <div class="article">
+                        <img class="image" src="images/image.jpg" />
+                        <a class="headline" href="#">This is an other story whose headline is seventy letters on average</a>
+                        <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                        <a class="sublink" href="#">Sublink headline number one</a>
+                        <a class="sublink" href="#">Sublink headline number two</a>
+                        <a class="sublink" href="#">Sublink headline number three</a>
+                    </div>
+                    <div class="article">
+                        <img class="image" src="images/image.jpg" />
+                        <a class="headline" href="#">This is an other story whose headline is seventy letters on average</a>
+                        <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                        <a class="sublink" href="#">Sublink headline number one</a>
+                        <a class="sublink" href="#">Sublink headline number two</a>
+                        <a class="sublink" href="#">Sublink headline number three</a>
+                    </div>
+                </div>
+            </div>
+            <div class="show-more">Show More</div>
+        </div>
+
+
+        <div class="container">
+            <img class="banner" src="images/banner-970-90.jpg" />
+            <div class="lead">
+            </div>
+            <div class="columizer">
+                <div class="main">
+                    <div class="article">
                         <img class="image" src="images/image.jpg" />
                         <a class="headline" href="#">This is a main story whose headline is seventy letters on average</a>
-                        <span class="trailtext">This trail text is longer than average this trail text is longer than average this trail text is longer than average this trail text is longer than average this trail text is longer than average this trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                        <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
+                        <a class="sublink" href="#">Sublink headline number one</a>
+                        <a class="sublink" href="#">Sublink headline number two</a>
+                        <a class="sublink" href="#">Sublink headline number three</a>
+                    </div>
+                    <div class="article">
+                        <img class="image" src="images/non-standard.jpg" />
+                        <a class="headline" href="#">This is a main story whose headline is seventy letters on average</a>
+                        <span class="trailtext">This trail text is longer than average this trail text is longer than average this trail text is longer than average this trail text is longer than average this trail text is longer than average this trailtext the trailtext the trailtext</span>
                         <a class="sublink" href="#">Sublink headline number one</a>
                         <a class="sublink" href="#">Sublink headline number two</a>
                         <a class="sublink" href="#">Sublink headline number three</a>
