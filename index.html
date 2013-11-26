@@ -1,10 +1,6 @@
 <html>
     <head>
         <style>
-            body {
-                margin-top: 0;
-            }
-            
             a {
                 text-decoration: none;
             }
@@ -20,7 +16,7 @@
                 box-sizing: border-box;
                 position: relative;
                 max-width: 1000px;
-                margin: 0 auto 30px auto;
+                margin: 30px auto 30px auto;
             }
             
             .lead {
@@ -46,11 +42,8 @@
             .lead .image {
                 width: 100%
             }
-
-            .image-boost {
-            }
-            .image-boost .image {
-                width: 70%;
+            .main .image-boost .image {
+                width: 300px;
                 float: left;
                 margin: 0 10px 0 0;
             }
@@ -61,6 +54,7 @@
                 display: block;
                 width: 300px;
                 float: none;
+                margin: 0;
             }
             .sublink-image {
                 display: none;
@@ -70,21 +64,21 @@
                 display: block;
                 color: #000000;
                 font-size: 26px;
-                line-height: 24px;
+                line-height: 28px;
                 padding: 8px 0 5px 0;
                 border-top: 1px solid #CCCCCC;
             }
             .lead .headline {
                 font-size: 32;
-                line-height: 30px;
+                line-height: 36px;
             }
             .other .headline {
                 font-size: 18px;
-                line-height: 18px;
+                line-height: 22px;
             }
-            .image-boost .headline {
+            .main .image-boost .headline {
                 font-size: 20px;
-                line-height: 20px;
+                line-height: 24px;
             }
             .other .image-boost .headline {
                 border-top: none;
@@ -121,13 +115,14 @@
             .show-more {
                 background: #CCCCCC;
                 padding: 7px 0 5px 0;
+                margin: 30px 0 0 0;
                 text-align: center;
                 text-transform: uppercase;
             }
 
             .banner,
             .mpu {
-                margin: 0 0 15px 0;
+                margin: 0 auto 15px auto;
                 display: none;
             }
 
@@ -157,7 +152,7 @@
                     top: 0;
                     right: 0;
                     width: 300px;
-                    border-left: 1px solid #CCCCCC;
+                    border-left: 1px dashed #CCCCCC;
                     padding-left: 15px;
                 }
 
@@ -170,7 +165,6 @@
                     position: absolute;
                     right: 15px;
                     bottom: -1px;
-                    -webkit-box-shadow: 0px -10px 10px -2px #FFFFFF;
                 }
 
                 .mpu {
@@ -184,7 +178,7 @@
                     display: block;
                 }
                     
-                .lead .article:first-child .image {
+                .lead .image-boost .image {
                     width: 522px;
                 }
 
@@ -204,9 +198,9 @@
             <!--img class="banner" src="images/banner-970-90.jpg" /-->
 
             <div class="lead">
-                <div class="article">
+                <div class="article image-boost">
                     <img class="image" src="images/image.jpg" />
-                    <a class="headline" href="#">This is an optional huge lead story, which get a large image and sublink thumbnails</a>
+                    <a class="headline" href="#">This is an optional lead story, with a bosted image and sublink thumbnails</a>
                     <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
                     
                     <div class="sublink">
@@ -217,8 +211,6 @@
                         <img class="sublink-image" src="images/image.jpg" />
                         <a href="#">Sublink headline number two</a>
                     </div>
-                    <a class="sublink" href="#">Sublink headline number three</a>
-                    <a class="sublink" href="#">Sublink headline number four</a>
                 </div>
                 <!-- lead 1 
                 -->
@@ -258,14 +250,14 @@
                     </div>
                     <div class="article image-boost">
                         <img class="image" src="images/image.jpg" />
-                        <a class="headline" href="#">This article has a great image, which has had it's volume increased</a>
+                        <a class="headline" href="#">This article has had its image boosted</a>
                         <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
                         <a class="sublink" href="#">Sublink headline number one</a>
                         <a class="sublink" href="#">Sublink headline number two</a>
                         <a class="sublink" href="#">Sublink headline number three</a>
                     </div>
                     <div class="article">
-                        <a class="headline" href="#">This story has a weak image, so it has been hidden by the editor</a>
+                        <a class="headline" href="#">This story has a weak image, so it has been hidden</a>
                         <span class="trailtext">The trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext the trailtext</span>
                         <a class="sublink" href="#">Sublink headline number one</a>
                         <a class="sublink" href="#">Sublink headline number two</a>
@@ -356,9 +348,9 @@
             <div class="show-more">Show More</div>
         </div>
 
+        <img class="banner" src="images/banner-970-90.jpg" />
 
         <div class="container">
-            <img class="banner" src="images/banner-970-90.jpg" />
             <div class="lead">
             </div>
             <div class="columizer">
