@@ -1,2 +1,1 @@
-responsive-2-col
-================
+[Static prototype](http://stephanfowler.com/responsive-2-col/)
